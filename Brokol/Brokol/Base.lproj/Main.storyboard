@@ -40,7 +40,9 @@
                             <constraint firstItem="obY-ue-aNV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="N44-g3-nrx"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="7wM-Ei-ZyR"/>
+                    <navigationItem key="navigationItem" id="7wM-Ei-ZyR">
+                        <barButtonItem key="backBarButtonItem" title=" " id="SWN-IP-xSX"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -67,8 +69,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Pq9-3a-C11" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YGM-jS-Q4b">
-                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="YGM-jS-Q4b">
+                        <rect key="frame" x="0.0" y="47" width="390" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
