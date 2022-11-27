@@ -9,6 +9,10 @@ import UIKit
 
 class itemsCell: UITableViewCell {
 
+    @IBOutlet weak var item: UILabel!
+    
+    @IBOutlet weak var expiry: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

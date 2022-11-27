@@ -19,6 +19,7 @@
 		88C3C8712932E85400FED8D1 /* itemsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C3C8702932E85400FED8D1 /* itemsCell.swift */; };
 		88C3C8742932EA7300FED8D1 /* Items+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C3C8722932EA7300FED8D1 /* Items+CoreDataClass.swift */; };
 		88C3C8752932EA7300FED8D1 /* Items+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C3C8732932EA7300FED8D1 /* Items+CoreDataProperties.swift */; };
+		88C3C8772932F41900FED8D1 /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C3C8762932F41900FED8D1 /* ItemsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		88C3C8702932E85400FED8D1 /* itemsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = itemsCell.swift; sourceTree = "<group>"; };
 		88C3C8722932EA7300FED8D1 /* Items+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Items+CoreDataClass.swift"; sourceTree = "<group>"; };
 		88C3C8732932EA7300FED8D1 /* Items+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Items+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		88C3C8762932F41900FED8D1 /* ItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				88C3C8572931E6FD00FED8D1 /* Main.storyboard */,
 				88C3C8682931F23700FED8D1 /* FirstViewController.swift */,
 				88C3C86A2931F27500FED8D1 /* SecondViewController.swift */,
+				88C3C8762932F41900FED8D1 /* ItemsViewController.swift */,
 				88C3C86C2932E70700FED8D1 /* saveVC.swift */,
 				88C3C8702932E85400FED8D1 /* itemsCell.swift */,
 				88C3C85D2931E6FF00FED8D1 /* Assets.xcassets */,
@@ -161,6 +164,7 @@
 				88C3C8742932EA7300FED8D1 /* Items+CoreDataClass.swift in Sources */,
 				88C3C8692931F23700FED8D1 /* FirstViewController.swift in Sources */,
 				88C3C85C2931E6FD00FED8D1 /* Brokol.xcdatamodeld in Sources */,
+				88C3C8772932F41900FED8D1 /* ItemsViewController.swift in Sources */,
 				88C3C8522931E6FD00FED8D1 /* AppDelegate.swift in Sources */,
 				88C3C8752932EA7300FED8D1 /* Items+CoreDataProperties.swift in Sources */,
 				88C3C8542931E6FD00FED8D1 /* SceneDelegate.swift in Sources */,
