@@ -27,3 +27,4 @@ https://www.youtube.com/watch?v=XYSZEBPGTqk&list=PLoN_ejT35AEjmnHkeJ_FGrb4ysVzs6
 https://github.com/clive819/Split-the-Bill
 https://developer.apple.com/documentation/vision
 https://developer.apple.com/documentation/vision/structuring_recognized_text_on_a_document
+https://github.com/kiritmodi2702/GIF-Swift/blob/master/GIF-Swift/iOSDevCenters%2BGIF.swift
