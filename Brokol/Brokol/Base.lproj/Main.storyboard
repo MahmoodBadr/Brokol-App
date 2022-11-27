@@ -129,12 +129,20 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="kV3-eo-bnn" colorLabel="IBBuiltInLabel-Purple">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="skd-zT-jJ2">
-                            <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
-                            <connections>
-                                <segue destination="lrg-ep-Hua" kind="show" id="c2t-zs-WJQ"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" id="skd-zT-jJ2">
+                                <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
+                                <connections>
+                                    <segue destination="lrg-ep-Hua" kind="show" id="c2t-zs-WJQ"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" id="tjL-Xa-vVV">
+                                <imageReference key="image" image="doc.viewfinder" catalog="system" symbolScale="large"/>
+                                <connections>
+                                    <action selector="scanBtnPressed:" destination="I2y-fy-rSo" id="lAl-y2-h5d"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="table" destination="lPr-cv-iXi" id="nAU-7q-CZr"/>
@@ -355,6 +363,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="doc.viewfinder" catalog="system" width="128" height="115"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -11,6 +11,7 @@ import Foundation
 class saveVC: UIViewController, UITextFieldDelegate {
     
     var date: NSDate!
+    let tableView = UITableView()
     
     @IBOutlet weak var itemText: UITextField!
     @IBOutlet weak var dateText: UITextField!
@@ -76,6 +77,8 @@ class saveVC: UIViewController, UITextFieldDelegate {
         itemText.delegate = self
         dateText.delegate = self
         
+        tableView.reloadData()
+        
         date = NSDate()
         // Do any additional setup after loading the view.
     }
@@ -95,8 +98,17 @@ class saveVC: UIViewController, UITextFieldDelegate {
     @IBAction func save(_ sender: Any) {
         let model = Items(context: context)
         model.name = itemText.text
-        model.expiry = dateText.text
+        model.expiry = dateText.text 
         
         saveContext()  
     }
+    
+    func editItem(_ item: Items? = nil, _ completion: @escaping ((Items) -> Void)) {
+        let model = Items(context: context)
+        model.name = itemText.text
+        model.expiry = dateText.text
+        
+        saveContext()
+    }
+    
 }
