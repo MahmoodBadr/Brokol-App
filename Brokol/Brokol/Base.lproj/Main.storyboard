@@ -132,7 +132,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Item" id="skd-zT-jJ2">
                             <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
                             <connections>
-                                <segue destination="lrg-ep-Hua" kind="showDetail" id="c2t-zs-WJQ"/>
+                                <segue destination="lrg-ep-Hua" kind="show" id="c2t-zs-WJQ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -283,11 +283,11 @@
             <objects>
                 <viewController id="lrg-ep-Hua" customClass="saveVC" customModule="Brokol" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wsZ-1s-jBd">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New Item:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6l2-Hi-Bvt">
-                                <rect key="frame" x="10" y="129" width="370" height="27.666666666666657"/>
+                                <rect key="frame" x="10" y="225" width="370" height="27.666666666666657"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="370" id="apH-JY-g0p"/>
                                 </constraints>
@@ -296,7 +296,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Product Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SFc-aw-d1b">
-                                <rect key="frame" x="16" y="164" width="358" height="36"/>
+                                <rect key="frame" x="16" y="260" width="358" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="24X-Ir-9Qg"/>
                                     <constraint firstAttribute="width" constant="358" id="Kw7-5K-gjF"/>
@@ -305,7 +305,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Pf-cv-2Kr">
-                                <rect key="frame" x="164" y="519" width="62" height="35"/>
+                                <rect key="frame" x="164" y="542" width="62" height="35"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="62" id="PLc-ex-wkO"/>
@@ -319,7 +319,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add Expiry Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r10-cJ-7ns">
-                                <rect key="frame" x="16" y="238" width="358" height="36"/>
+                                <rect key="frame" x="16" y="334" width="358" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="9kU-5I-rwh"/>
                                     <constraint firstAttribute="width" constant="358" id="U5l-V8-hOB"/>

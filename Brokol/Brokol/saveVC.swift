@@ -96,5 +96,7 @@ class saveVC: UIViewController, UITextFieldDelegate {
         let model = Items(context: context)
         model.name = itemText.text
         model.expiry = dateText.text
+        
+        saveContext()  
     }
 }

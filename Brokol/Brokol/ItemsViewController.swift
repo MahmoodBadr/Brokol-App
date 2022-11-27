@@ -6,8 +6,13 @@
 //
 
 import UIKit
+import CoreData
 
 class ItemsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    var result:[Items] = []
 
     @IBOutlet weak var table: UITableView!
     
@@ -19,15 +24,39 @@ class ItemsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        fetch()
+        table.reloadData()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return result.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = table.dequeueReusableCell(withIdentifier: "itemid", for: indexPath) as! itemsCell
+        
+        let rst = result[indexPath.row]
+        cell.item.text = rst.name
+        cell.expiry.text = rst.expiry
         return cell
     }
     
+    func fetch() {
+        let request = NSFetchRequest<Items>(entityName: "Items")
+        
+        do {
+            result = try context.fetch(request)
+        }
+        catch {
+            print(error)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 95
+    }
     
     
     /*
