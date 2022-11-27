@@ -18,10 +18,11 @@ class ItemsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBOutlet weak var table: UITableView!
     
+//     inspiration from split-the-bill - https://github.com/clive819/Split-the-Bill
     // regex for pattern recognition
     private let itemNamePattern = "^-?\\$?-?\\d+\\.\\d{2}-?"
-    private let itemPricePattern = "\\d+\\.\\d{2}"
     private let nonItemKeywords = ["total", "balance", "sales", "tax", "gst"]
+    private let skipItemWords = ["bags","card","save","buy","offer", "$"]
     
     private var textRecognitionRequest = VNRecognizeTextRequest()
     
@@ -121,9 +122,10 @@ extension ItemsViewController: VNDocumentCameraViewControllerDelegate {
                     let image = scan.imageOfPage(at: pageNumber)
                     self?.processImage(image: image)
                 }
-                
+        
                 DispatchQueue.main.async {
 //                    self?.tableView.reloadData()
+                    
                     self?.fetch()
                     
                     self?.activityIndicator.stopAnimating()
@@ -156,8 +158,8 @@ extension ItemsViewController: VNDocumentCameraViewControllerDelegate {
             }
         })
         
-        textRecognitionRequest.recognitionLevel = .accurate
         textRecognitionRequest.recognitionLanguages = ["en-US"]
+        textRecognitionRequest.recognitionLevel = .accurate
         textRecognitionRequest.usesLanguageCorrection = true
     }
     
@@ -224,22 +226,32 @@ extension ItemsViewController: VNDocumentCameraViewControllerDelegate {
 //            if price == 0 { continue }
             
             if noMoreItems(name) { break }
+//            if skipItems(name) { break }
             
             let item = Items(context: context)
             item.name = name
-        
+            
+            // get the current date
+            let currentDateTime = Date()
+            let formatter = DateFormatter()
+            formatter.timeStyle = .none
+            formatter.dateStyle = .medium
+            item.expiry = formatter.string(from: currentDateTime) 
+
 //            item.value = price
             
             print(name)
 //            print(price)
             
             products.append(item)
+//            saveContext()
+//            self.fetch()
         }
         
-//        DispatchQueue.main.async { [weak self] in
-//            self?.tableView.reloadData()
-        saveContext()
-//        }
+        DispatchQueue.main.async { [weak self] in
+            saveContext()
+            self?.fetch()
+        }
     }
     
     private func isPriceTag(text: String) -> Bool {
@@ -257,6 +269,16 @@ extension ItemsViewController: VNDocumentCameraViewControllerDelegate {
     private func noMoreItems(_ text: String) -> Bool {
         let text = text.lowercased()
         for keyword in nonItemKeywords {
+            if text.contains(keyword) {
+                return true
+            }
+        }
+        return false
+    }
+    
+    private func skipItems(_ text: String) -> Bool {
+        let text = text.lowercased()
+        for keyword in skipItemWords {
             if text.contains(keyword) {
                 return true
             }
