@@ -58,7 +58,20 @@ class ItemsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return 95
     }
     
-    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let delete = UIContextualAction(style: .destructive, title: "Delete") {_,_,_
+            in
+            self.context.delete(self.result[indexPath.row])
+            saveContext()
+            self.fetch()
+            
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+        let swipe = UISwipeActionsConfiguration(actions: [delete])
+        
+        return swipe
+    }
+     
     /*
     // MARK: - Navigation
 
