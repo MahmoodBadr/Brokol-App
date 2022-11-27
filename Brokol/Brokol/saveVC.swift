@@ -6,11 +6,15 @@
 //
 
 import UIKit
+import Foundation
 
 class saveVC: UIViewController, UITextFieldDelegate {
     
+    var date: NSDate!
+    
     @IBOutlet weak var itemText: UITextField!
     @IBOutlet weak var dateText: UITextField!
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     
     // MARK: Text Field Delegate
@@ -26,30 +30,53 @@ class saveVC: UIViewController, UITextFieldDelegate {
         toolbar.sizeToFit()
         
         // button for complete
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(dnPressed))
         toolbar.setItems([doneButton], animated: true)
         
         return toolbar
     }
     
+    let datePicker = UIDatePicker()
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.inputAccessoryView = createToolbar()
         if textField == dateText {
-            let datePicker = UIDatePicker()
             datePicker.preferredDatePickerStyle = .wheels
             datePicker.datePickerMode = .date
             textField.inputView = datePicker
-            
         }
     }
     
+    @objc func dnPressed() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        
+        self.dateText.text = dateFormatter.string(from: datePicker.date)
+        self.view.endEditing(true)
+    }
     
+    func displayDate(date: NSDate) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        
+        self.dateText.text = dateFormatter.string(from: datePicker.date)
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        date = NSDate()
+        displayDate(date: date)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         itemText.delegate = self
         dateText.delegate = self
+        
+        date = NSDate()
         // Do any additional setup after loading the view.
     }
     
@@ -66,5 +93,8 @@ class saveVC: UIViewController, UITextFieldDelegate {
     */
 
     @IBAction func save(_ sender: Any) {
+        let model = Items(context: context)
+        model.name = itemText.text
+        model.expiry = dateText.text
     }
 }

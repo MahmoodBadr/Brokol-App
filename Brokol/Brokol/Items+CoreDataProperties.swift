@@ -17,7 +17,7 @@ extension Items {
     }
 
     @NSManaged public var name: String?
-    @NSManaged public var expiry: Date?
+    @NSManaged public var expiry: String?
 
 }
 
