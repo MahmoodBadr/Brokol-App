@@ -46,6 +46,7 @@
 		88C9E680293418E900C9065F /* brokollogo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = brokollogo.gif; path = "../../../../../Downloads/Visual Materials /brokollogo.gif"; sourceTree = "<group>"; };
 		88C9E6842934196000C9065F /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		88C9E68629341B0400C9065F /* gifloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gifloader.swift; sourceTree = "<group>"; };
+		88C9E68C29342B2D00C9065F /* brokollogo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = brokollogo.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +97,7 @@
 				88C3C87829334D6000FED8D1 /* support.swift */,
 				88C9E680293418E900C9065F /* brokollogo.gif */,
 				88C9E68629341B0400C9065F /* gifloader.swift */,
+				88C9E68C29342B2D00C9065F /* brokollogo.gif */,
 			);
 			path = Brokol;
 			sourceTree = "<group>";
