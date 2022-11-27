@@ -20,3 +20,6 @@ Within the Apple ecosystem we learned about the vision framework in IOS and more
 
 ## What's next for Brokol App
 The team aims to take this project to the market. By analyzing the problem and possible users, we have decided that the early customer segments to tackle are moms and young families in Canada. We want to provide a tool for those who have to worry the most about the consumption of groceries process in their households. 
+
+## Inspiration and Resources Used
+
