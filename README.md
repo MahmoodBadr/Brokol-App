@@ -1,6 +1,6 @@
 # Brokol
 
-![Brokol App Logo](https://drive.google.com/file/d/1_WP0wHxW1MKQqNlCPlzFmcSJocIC8TmR/view?usp=sharing)
+![Brokol App Logo](https://lh4.googleusercontent.com/0V7ny13NyRQeNUCT_GGFiHzpDOae8ubslkTOY_Sfm1SA80HIS-z-eAI_euUOA7E8a5Y=w2400)
 
 ## Inspiration
 Have you ever felt frustrated or disappointed about throwing away grocery items that you have previously bought? Growing up in communities affected by food insecurities, the team felt personally compelled to work on a project to tackle this issue from the household's point of view. We want consumers to visualize their money savings and environmental impact from reducing food waste, while promoting food security with our app. 
